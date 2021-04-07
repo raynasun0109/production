@@ -1,0 +1,9 @@
+﻿{
+  "agentId": 2,
+  "agentName": "MacBook-Pro",
+  "poolId": 1,
+  "poolName": "Default",
+  "serverUrl": "https://pipelines.actions.githubusercontent.com/L17mpQ2DV2SSkOYzfyhFBBfYZoLdZlgaHEozvSinR7YrFpRnra",
+  "gitHubUrl": "https://github.com/raynasun0109/production",
+  "workFolder": "react-app"
+}

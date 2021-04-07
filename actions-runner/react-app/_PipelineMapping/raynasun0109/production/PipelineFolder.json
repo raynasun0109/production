@@ -1,0 +1,12 @@
+﻿{
+  "repositoryName": "raynasun0109/production",
+  "pipelineDirectory": "production",
+  "workspaceDirectory": "production/production",
+  "repositories": {
+    "raynasun0109/production": {
+      "repositoryPath": "production/production",
+      "lastRunOn": "04/07/2021 15:23:43 +08:00"
+    }
+  },
+  "lastRunOn": "04/07/2021 16:10:30 +08:00"
+}

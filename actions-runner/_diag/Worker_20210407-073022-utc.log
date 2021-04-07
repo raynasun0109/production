@@ -1,0 +1,1254 @@
+[2021-04-07 07:30:22Z INFO HostContext] No proxy settings were found based on environmental variables (http_proxy/https_proxy/HTTP_PROXY/HTTPS_PROXY)
+[2021-04-07 07:30:22Z INFO HostContext] Well known directory 'Bin': '/Users/sunmingyang/Documents/test/deployDemo/prod/actions-runner/bin'
+[2021-04-07 07:30:22Z INFO HostContext] Well known directory 'Root': '/Users/sunmingyang/Documents/test/deployDemo/prod/actions-runner'
+[2021-04-07 07:30:22Z INFO HostContext] Well known config file 'Credentials': '/Users/sunmingyang/Documents/test/deployDemo/prod/actions-runner/.credentials'
+[2021-04-07 07:30:22Z INFO Worker] Version: 2.277.1
+[2021-04-07 07:30:22Z INFO Worker] Commit: 183a3dd9a0d4d51feddc5fe9fa6c3b5f8b08343d
+[2021-04-07 07:30:22Z INFO Worker] Culture: 
+[2021-04-07 07:30:22Z INFO Worker] UI Culture: 
+[2021-04-07 07:30:22Z INFO Worker] Waiting to receive the job message from the channel.
+[2021-04-07 07:30:22Z INFO Worker] Message received.
+[2021-04-07 07:30:23Z INFO Worker] Job message:
+ {
+  "fileTable": [
+    ".github/workflows/node.js.yml"
+  ],
+  "mask": [
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    }
+  ],
+  "steps": [
+    {
+      "type": "action",
+      "reference": {
+        "type": "repository",
+        "name": "actions/checkout",
+        "ref": "v2",
+        "repositoryType": "GitHub",
+        "path": ""
+      },
+      "condition": "success()",
+      "id": "56825445-2bcd-5dc9-133e-3e301c6fbe2a",
+      "name": "actionscheckout"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "repository",
+        "name": "actions/setup-node",
+        "ref": "v1",
+        "repositoryType": "GitHub",
+        "path": ""
+      },
+      "displayNameToken": {
+        "type": 3,
+        "file": 1,
+        "line": 16,
+        "col": 13,
+        "expr": "format('Use Node.js {0}', matrix.node-version)"
+      },
+      "inputs": {
+        "type": 2,
+        "file": 1,
+        "line": 19,
+        "col": 9,
+        "map": [
+          {
+            "key": {
+              "type": 0,
+              "file": 1,
+              "line": 19,
+              "col": 9,
+              "lit": "node-version"
+            },
+            "value": {
+              "type": 3,
+              "file": 1,
+              "line": 19,
+              "col": 23,
+              "expr": "matrix.node-version"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "991352c2-9e91-5ad8-bc41-8505c4491f19",
+      "name": "actionssetup-node"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "script"
+      },
+      "inputs": {
+        "type": 2,
+        "map": [
+          {
+            "key": "script",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 20,
+              "col": 12,
+              "lit": "npm i"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "ec94ed4c-090e-5d8d-d9f6-d75673a2e0f4",
+      "name": "run1"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "script"
+      },
+      "inputs": {
+        "type": 2,
+        "map": [
+          {
+            "key": "script",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 21,
+              "col": 12,
+              "lit": "npm run build --if-present"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "35a6099b-55bb-59a5-08f9-7598acb3ad1a",
+      "name": "run2"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "script"
+      },
+      "inputs": {
+        "type": 2,
+        "map": [
+          {
+            "key": "script",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 22,
+              "col": 12,
+              "lit": "npm test"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "0b9caf35-f9e3-5e0a-7250-9da7c347dbf0",
+      "name": "run3"
+    }
+  ],
+  "variables": {
+    "system.isScheduled": {
+      "value": "False"
+    },
+    "system": {
+      "value": "actions"
+    },
+    "system.hosttype": {
+      "value": "actions"
+    },
+    "system.servertype": {
+      "value": "Hosted"
+    },
+    "system.culture": {
+      "value": "en-US"
+    },
+    "system.collectionId": {
+      "value": "dffcc09c-8814-4289-8344-a65524c7998a"
+    },
+    "system.collectionUri": {
+      "value": "https://pipelines.actions.githubusercontent.com/L17mpQ2DV2SSkOYzfyhFBBfYZoLdZlgaHEozvSinR7YrFpRnra/"
+    },
+    "system.taskDefinitionsUri": {
+      "value": "https://pipelines.actions.githubusercontent.com/L17mpQ2DV2SSkOYzfyhFBBfYZoLdZlgaHEozvSinR7YrFpRnra/"
+    },
+    "system.pipelineStartTime": {
+      "value": "2021-04-07 07:30:18+00:00"
+    },
+    "system.definitionId": {
+      "value": "3"
+    },
+    "system.runner.lowdiskspacethreshold": {
+      "value": "100"
+    },
+    "DistributedTask.NewActionMetadata": {
+      "value": "true"
+    },
+    "DistributedTask.UseContextNameForGITHUBACTION": {
+      "value": "true"
+    },
+    "system.teamProjectId": {
+      "value": "00000000-0000-0000-0000-000000000000"
+    },
+    "build.buildId": {
+      "value": "2"
+    },
+    "build.containerId": {
+      "value": "246658"
+    },
+    "system.workflowFilePath": {
+      "value": ".github/workflows/node.js.yml"
+    },
+    "system.definitionName": {
+      "value": "production"
+    },
+    "system.planId": {
+      "value": "85fa7e6a-9133-4b5f-b96c-bc216140004d"
+    },
+    "system.timelineId": {
+      "value": "85fa7e6a-9133-4b5f-b96c-bc216140004d"
+    },
+    "system.stageDisplayName": {
+      "value": "__default"
+    },
+    "system.stageId": {
+      "value": "96ac2280-8cb4-5df5-99de-dd2da759617d"
+    },
+    "system.stageName": {
+      "value": "__default"
+    },
+    "system.stageAttempt": {
+      "value": "1"
+    },
+    "system.phaseDisplayName": {
+      "value": "build"
+    },
+    "system.phaseId": {
+      "value": "6884a131-87da-5381-61f3-d7acc3b91d76"
+    },
+    "system.phaseName": {
+      "value": "build"
+    },
+    "system.phaseAttempt": {
+      "value": "1"
+    },
+    "system.jobIdentifier": {
+      "value": "build._12_x"
+    },
+    "system.jobAttempt": {
+      "value": "1"
+    },
+    "System.JobPositionInPhase": {
+      "value": "2"
+    },
+    "System.TotalJobsInPhase": {
+      "value": "4"
+    },
+    "system.github.job": {
+      "value": "build"
+    },
+    "system.jobDisplayName": {
+      "value": "build (12.x)"
+    },
+    "system.jobId": {
+      "value": "a9a345e6-1106-5aaa-6fe5-f842db892828"
+    },
+    "system.jobName": {
+      "value": "_12_x"
+    },
+    "system.github.token.permissions": {
+      "value": "{\"Actions\":\"write\",\"Checks\":\"write\",\"Contents\":\"write\",\"Deployments\":\"write\",\"Issues\":\"write\",\"Metadata\":\"read\",\"OrganizationPackages\":\"write\",\"Packages\":\"write\",\"PullRequests\":\"write\",\"RepositoryProjects\":\"write\",\"SecurityEvents\":\"write\",\"Statuses\":\"write\"}"
+    },
+    "system.github.token": {
+      "value": "***",
+      "isSecret": true
+    },
+    "system.runnerGroupName": {
+      "value": "Default"
+    }
+  },
+  "messageType": "PipelineAgentJobRequest",
+  "plan": {
+    "scopeIdentifier": "00000000-0000-0000-0000-000000000000",
+    "planType": "Actions",
+    "version": 13,
+    "planId": "85fa7e6a-9133-4b5f-b96c-bc216140004d",
+    "planGroup": "Actions:00000000-0000-0000-0000-000000000000:1",
+    "artifactUri": "vstfs:///Build/Build/2",
+    "artifactLocation": null,
+    "definition": {
+      "_links": {},
+      "id": 3,
+      "name": "production"
+    },
+    "owner": {
+      "_links": {},
+      "id": 3,
+      "name": "raynasun0109"
+    }
+  },
+  "timeline": {
+    "id": "85fa7e6a-9133-4b5f-b96c-bc216140004d",
+    "changeId": 23,
+    "location": null
+  },
+  "jobId": "a9a345e6-1106-5aaa-6fe5-f842db892828",
+  "jobDisplayName": "build (12.x)",
+  "jobName": "_12_x",
+  "requestId": 2,
+  "lockedUntil": "0001-01-01T00:00:00",
+  "resources": {
+    "endpoints": [
+      {
+        "data": {
+          "ServerId": "dffcc09c-8814-4289-8344-a65524c7998a",
+          "ServerName": "L17mpQ2DV2SSkOYzfyhFBBfYZoLdZlgaHEozvSinR7YrFpRnra",
+          "CacheServerUrl": "https://artifactcache.actions.githubusercontent.com/L17mpQ2DV2SSkOYzfyhFBBfYZoLdZlgaHEozvSinR7YrFpRnra/"
+        },
+        "name": "SystemVssConnection",
+        "url": "https://pipelines.actions.githubusercontent.com/L17mpQ2DV2SSkOYzfyhFBBfYZoLdZlgaHEozvSinR7YrFpRnra/",
+        "authorization": {
+          "parameters": {
+            "AccessToken": ***
+          },
+          "scheme": "OAuth"
+        },
+        "isShared": false,
+        "isReady": true
+      }
+    ]
+  },
+  "contextData": {
+    "github": {
+      "t": 2,
+      "d": [
+        {
+          "k": "ref",
+          "v": "refs/heads/main"
+        },
+        {
+          "k": "sha",
+          "v": "bbd2b628ff75501a0fb70022d85589a88427d885"
+        },
+        {
+          "k": "repository",
+          "v": "raynasun0109/production"
+        },
+        {
+          "k": "repository_owner",
+          "v": "raynasun0109"
+        },
+        {
+          "k": "repositoryUrl",
+          "v": "git://github.com/raynasun0109/production.git"
+        },
+        {
+          "k": "run_id",
+          "v": "725144125"
+        },
+        {
+          "k": "run_number",
+          "v": "1"
+        },
+        {
+          "k": "retention_days",
+          "v": "90"
+        },
+        {
+          "k": "actor",
+          "v": "raynasun0109"
+        },
+        {
+          "k": "workflow",
+          "v": "Node.js CI"
+        },
+        {
+          "k": "head_ref",
+          "v": ""
+        },
+        {
+          "k": "base_ref",
+          "v": ""
+        },
+        {
+          "k": "event_name",
+          "v": "push"
+        },
+        {
+          "k": "event",
+          "v": {
+            "t": 2,
+            "d": [
+              {
+                "k": "after",
+                "v": "bbd2b628ff75501a0fb70022d85589a88427d885"
+              },
+              {
+                "k": "base_ref",
+                "v": null
+              },
+              {
+                "k": "before",
+                "v": "312a5f050ea068822ca059fb9279bd4fac55ce94"
+              },
+              {
+                "k": "commits",
+                "v": {
+                  "t": 1,
+                  "a": [
+                    {
+                      "t": 2,
+                      "d": [
+                        {
+                          "k": "author",
+                          "v": {
+                            "t": 2,
+                            "d": [
+                              {
+                                "k": "email",
+                                "v": "65289360+raynasun0109@users.noreply.github.com"
+                              },
+                              {
+                                "k": "name",
+                                "v": "raynasun0109"
+                              },
+                              {
+                                "k": "username",
+                                "v": "raynasun0109"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "k": "committer",
+                          "v": {
+                            "t": 2,
+                            "d": [
+                              {
+                                "k": "email",
+                                "v": "noreply@github.com"
+                              },
+                              {
+                                "k": "name",
+                                "v": "GitHub"
+                              },
+                              {
+                                "k": "username",
+                                "v": "web-flow"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "k": "distinct",
+                          "v": true
+                        },
+                        {
+                          "k": "id",
+                          "v": "bbd2b628ff75501a0fb70022d85589a88427d885"
+                        },
+                        {
+                          "k": "message",
+                          "v": "Create node.js.yml"
+                        },
+                        {
+                          "k": "timestamp",
+                          "v": "2021-04-07T15:05:56+08:00"
+                        },
+                        {
+                          "k": "tree_id",
+                          "v": "0f367bc74fa2991282a16c28fa6b1a30e799aefb"
+                        },
+                        {
+                          "k": "url",
+                          "v": "https://github.com/raynasun0109/production/commit/bbd2b628ff75501a0fb70022d85589a88427d885"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "compare",
+                "v": "https://github.com/raynasun0109/production/compare/312a5f050ea0...bbd2b628ff75"
+              },
+              {
+                "k": "created",
+                "v": false
+              },
+              {
+                "k": "deleted",
+                "v": false
+              },
+              {
+                "k": "forced",
+                "v": false
+              },
+              {
+                "k": "head_commit",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "author",
+                      "v": {
+                        "t": 2,
+                        "d": [
+                          {
+                            "k": "email",
+                            "v": "65289360+raynasun0109@users.noreply.github.com"
+                          },
+                          {
+                            "k": "name",
+                            "v": "raynasun0109"
+                          },
+                          {
+                            "k": "username",
+                            "v": "raynasun0109"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "k": "committer",
+                      "v": {
+                        "t": 2,
+                        "d": [
+                          {
+                            "k": "email",
+                            "v": "noreply@github.com"
+                          },
+                          {
+                            "k": "name",
+                            "v": "GitHub"
+                          },
+                          {
+                            "k": "username",
+                            "v": "web-flow"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "k": "distinct",
+                      "v": true
+                    },
+                    {
+                      "k": "id",
+                      "v": "bbd2b628ff75501a0fb70022d85589a88427d885"
+                    },
+                    {
+                      "k": "message",
+                      "v": "Create node.js.yml"
+                    },
+                    {
+                      "k": "timestamp",
+                      "v": "2021-04-07T15:05:56+08:00"
+                    },
+                    {
+                      "k": "tree_id",
+                      "v": "0f367bc74fa2991282a16c28fa6b1a30e799aefb"
+                    },
+                    {
+                      "k": "url",
+                      "v": "https://github.com/raynasun0109/production/commit/bbd2b628ff75501a0fb70022d85589a88427d885"
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "pusher",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "email",
+                      "v": "65289360+raynasun0109@users.noreply.github.com"
+                    },
+                    {
+                      "k": "name",
+                      "v": "raynasun0109"
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "ref",
+                "v": "refs/heads/main"
+              },
+              {
+                "k": "repository",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "archive_url",
+                      "v": "https://api.github.com/repos/raynasun0109/production/{archive_format}{/ref}"
+                    },
+                    {
+                      "k": "archived",
+                      "v": false
+                    },
+                    {
+                      "k": "assignees_url",
+                      "v": "https://api.github.com/repos/raynasun0109/production/assignees{/user}"
+                    },
+                    {
+                      "k": "blobs_url",
+                      "v": "https://api.github.com/repos/raynasun0109/production/git/blobs{/sha}"
+                    },
+                    {
+                      "k": "branches_url",
+                      "v": "https://api.github.com/repos/raynasun0109/production/branches{/branch}"
+                    },
+                    {
+                      "k": "clone_url",
+                      "v": "https://github.com/raynasun0109/production.git"
+                    },
+                    {
+                      "k": "collaborators_url",
+                      "v": "https://api.github.com/repos/raynasun0109/production/collaborators{/collaborator}"
+                    },
+                    {
+                      "k": "comments_url",
+                      "v": "https://api.github.com/repos/raynasun0109/production/comments{/number}"
+                    },
+                    {
+                      "k": "commits_url",
+                      "v": "https://api.github.com/repos/raynasun0109/production/commits{/sha}"
+                    },
+                    {
+                      "k": "compare_url",
+                      "v": "https://api.github.com/repos/raynasun0109/production/compare/{base}...{head}"
+                    },
+                    {
+                      "k": "contents_url",
+                      "v": "https://api.github.com/repos/raynasun0109/production/contents/{+path}"
+                    },
+                    {
+                      "k": "contributors_url",
+                      "v": "https://api.github.com/repos/raynasun0109/production/contributors"
+                    },
+                    {
+                      "k": "created_at",
+                      "v": 1617776069.0
+                    },
+                    {
+                      "k": "default_branch",
+                      "v": "main"
+                    },
+                    {
+                      "k": "deployments_url",
+                      "v": "https://api.github.com/repos/raynasun0109/production/deployments"
+                    },
+                    {
+                      "k": "description",
+                      "v": null
+                    },
+                    {
+                      "k": "disabled",
+                      "v": false
+                    },
+                    {
+                      "k": "downloads_url",
+                      "v": "https://api.github.com/repos/raynasun0109/production/downloads"
+                    },
+                    {
+                      "k": "events_url",
+                      "v": "https://api.github.com/repos/raynasun0109/production/events"
+                    },
+                    {
+                      "k": "fork",
+                      "v": false
+                    },
+                    {
+                      "k": "forks",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "forks_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "forks_url",
+                      "v": "https://api.github.com/repos/raynasun0109/production/forks"
+                    },
+                    {
+                      "k": "full_name",
+                      "v": "raynasun0109/production"
+                    },
+                    {
+                      "k": "git_commits_url",
+                      "v": "https://api.github.com/repos/raynasun0109/production/git/commits{/sha}"
+                    },
+                    {
+                      "k": "git_refs_url",
+                      "v": "https://api.github.com/repos/raynasun0109/production/git/refs{/sha}"
+                    },
+                    {
+                      "k": "git_tags_url",
+                      "v": "https://api.github.com/repos/raynasun0109/production/git/tags{/sha}"
+                    },
+                    {
+                      "k": "git_url",
+                      "v": "git://github.com/raynasun0109/production.git"
+                    },
+                    {
+                      "k": "has_downloads",
+                      "v": true
+                    },
+                    {
+                      "k": "has_issues",
+                      "v": true
+                    },
+                    {
+                      "k": "has_pages",
+                      "v": false
+                    },
+                    {
+                      "k": "has_projects",
+                      "v": true
+                    },
+                    {
+                      "k": "has_wiki",
+                      "v": true
+                    },
+                    {
+                      "k": "homepage",
+                      "v": null
+                    },
+                    {
+                      "k": "hooks_url",
+                      "v": "https://api.github.com/repos/raynasun0109/production/hooks"
+                    },
+                    {
+                      "k": "html_url",
+                      "v": "https://github.com/raynasun0109/production"
+                    },
+                    {
+                      "k": "id",
+                      "v": 355433097.0
+                    },
+                    {
+                      "k": "issue_comment_url",
+                      "v": "https://api.github.com/repos/raynasun0109/production/issues/comments{/number}"
+                    },
+                    {
+                      "k": "issue_events_url",
+                      "v": "https://api.github.com/repos/raynasun0109/production/issues/events{/number}"
+                    },
+                    {
+                      "k": "issues_url",
+                      "v": "https://api.github.com/repos/raynasun0109/production/issues{/number}"
+                    },
+                    {
+                      "k": "keys_url",
+                      "v": "https://api.github.com/repos/raynasun0109/production/keys{/key_id}"
+                    },
+                    {
+                      "k": "labels_url",
+                      "v": "https://api.github.com/repos/raynasun0109/production/labels{/name}"
+                    },
+                    {
+                      "k": "language",
+                      "v": "JavaScript"
+                    },
+                    {
+                      "k": "languages_url",
+                      "v": "https://api.github.com/repos/raynasun0109/production/languages"
+                    },
+                    {
+                      "k": "license",
+                      "v": null
+                    },
+                    {
+                      "k": "master_branch",
+                      "v": "main"
+                    },
+                    {
+                      "k": "merges_url",
+                      "v": "https://api.github.com/repos/raynasun0109/production/merges"
+                    },
+                    {
+                      "k": "milestones_url",
+                      "v": "https://api.github.com/repos/raynasun0109/production/milestones{/number}"
+                    },
+                    {
+                      "k": "mirror_url",
+                      "v": null
+                    },
+                    {
+                      "k": "name",
+                      "v": "production"
+                    },
+                    {
+                      "k": "node_id",
+                      "v": "MDEwOlJlcG9zaXRvcnkzNTU0MzMwOTc="
+                    },
+                    {
+                      "k": "notifications_url",
+                      "v": "https://api.github.com/repos/raynasun0109/production/notifications{?since,all,participating}"
+                    },
+                    {
+                      "k": "open_issues",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "open_issues_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "owner",
+                      "v": {
+                        "t": 2,
+                        "d": [
+                          {
+                            "k": "avatar_url",
+                            "v": "https://avatars.githubusercontent.com/u/65289360?v=4"
+                          },
+                          {
+                            "k": "email",
+                            "v": "65289360+raynasun0109@users.noreply.github.com"
+                          },
+                          {
+                            "k": "events_url",
+                            "v": "https://api.github.com/users/raynasun0109/events{/privacy}"
+                          },
+                          {
+                            "k": "followers_url",
+                            "v": "https://api.github.com/users/raynasun0109/followers"
+                          },
+                          {
+                            "k": "following_url",
+                            "v": "https://api.github.com/users/raynasun0109/following{/other_user}"
+                          },
+                          {
+                            "k": "gists_url",
+                            "v": "https://api.github.com/users/raynasun0109/gists{/gist_id}"
+                          },
+                          {
+                            "k": "gravatar_id",
+                            "v": ""
+                          },
+                          {
+                            "k": "html_url",
+                            "v": "https://github.com/raynasun0109"
+                          },
+                          {
+                            "k": "id",
+                            "v": 65289360.0
+                          },
+                          {
+                            "k": "login",
+                            "v": "raynasun0109"
+                          },
+                          {
+                            "k": "name",
+                            "v": "raynasun0109"
+                          },
+                          {
+                            "k": "node_id",
+                            "v": "MDQ6VXNlcjY1Mjg5MzYw"
+                          },
+                          {
+                            "k": "organizations_url",
+                            "v": "https://api.github.com/users/raynasun0109/orgs"
+                          },
+                          {
+                            "k": "received_events_url",
+                            "v": "https://api.github.com/users/raynasun0109/received_events"
+                          },
+                          {
+                            "k": "repos_url",
+                            "v": "https://api.github.com/users/raynasun0109/repos"
+                          },
+                          {
+                            "k": "site_admin",
+                            "v": false
+                          },
+                          {
+                            "k": "starred_url",
+                            "v": "https://api.github.com/users/raynasun0109/starred{/owner}{/repo}"
+                          },
+                          {
+                            "k": "subscriptions_url",
+                            "v": "https://api.github.com/users/raynasun0109/subscriptions"
+                          },
+                          {
+                            "k": "type",
+                            "v": "User"
+                          },
+                          {
+                            "k": "url",
+                            "v": "https://api.github.com/users/raynasun0109"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "k": "private",
+                      "v": false
+                    },
+                    {
+                      "k": "pulls_url",
+                      "v": "https://api.github.com/repos/raynasun0109/production/pulls{/number}"
+                    },
+                    {
+                      "k": "pushed_at",
+                      "v": 1617779156.0
+                    },
+                    {
+                      "k": "releases_url",
+                      "v": "https://api.github.com/repos/raynasun0109/production/releases{/id}"
+                    },
+                    {
+                      "k": "size",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "ssh_url",
+                      "v": "git@github.com:raynasun0109/production.git"
+                    },
+                    {
+                      "k": "stargazers",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "stargazers_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "stargazers_url",
+                      "v": "https://api.github.com/repos/raynasun0109/production/stargazers"
+                    },
+                    {
+                      "k": "statuses_url",
+                      "v": "https://api.github.com/repos/raynasun0109/production/statuses/{sha}"
+                    },
+                    {
+                      "k": "subscribers_url",
+                      "v": "https://api.github.com/repos/raynasun0109/production/subscribers"
+                    },
+                    {
+                      "k": "subscription_url",
+                      "v": "https://api.github.com/repos/raynasun0109/production/subscription"
+                    },
+                    {
+                      "k": "svn_url",
+                      "v": "https://github.com/raynasun0109/production"
+                    },
+                    {
+                      "k": "tags_url",
+                      "v": "https://api.github.com/repos/raynasun0109/production/tags"
+                    },
+                    {
+                      "k": "teams_url",
+                      "v": "https://api.github.com/repos/raynasun0109/production/teams"
+                    },
+                    {
+                      "k": "trees_url",
+                      "v": "https://api.github.com/repos/raynasun0109/production/git/trees{/sha}"
+                    },
+                    {
+                      "k": "updated_at",
+                      "v": "2021-04-07T06:53:08Z"
+                    },
+                    {
+                      "k": "url",
+                      "v": "https://github.com/raynasun0109/production"
+                    },
+                    {
+                      "k": "watchers",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "watchers_count",
+                      "v": 0.0
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "sender",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "avatar_url",
+                      "v": "https://avatars.githubusercontent.com/u/65289360?v=4"
+                    },
+                    {
+                      "k": "events_url",
+                      "v": "https://api.github.com/users/raynasun0109/events{/privacy}"
+                    },
+                    {
+                      "k": "followers_url",
+                      "v": "https://api.github.com/users/raynasun0109/followers"
+                    },
+                    {
+                      "k": "following_url",
+                      "v": "https://api.github.com/users/raynasun0109/following{/other_user}"
+                    },
+                    {
+                      "k": "gists_url",
+                      "v": "https://api.github.com/users/raynasun0109/gists{/gist_id}"
+                    },
+                    {
+                      "k": "gravatar_id",
+                      "v": ""
+                    },
+                    {
+                      "k": "html_url",
+                      "v": "https://github.com/raynasun0109"
+                    },
+                    {
+                      "k": "id",
+                      "v": 65289360.0
+                    },
+                    {
+                      "k": "login",
+                      "v": "raynasun0109"
+                    },
+                    {
+                      "k": "node_id",
+                      "v": "MDQ6VXNlcjY1Mjg5MzYw"
+                    },
+                    {
+                      "k": "organizations_url",
+                      "v": "https://api.github.com/users/raynasun0109/orgs"
+                    },
+                    {
+                      "k": "received_events_url",
+                      "v": "https://api.github.com/users/raynasun0109/received_events"
+                    },
+                    {
+                      "k": "repos_url",
+                      "v": "https://api.github.com/users/raynasun0109/repos"
+                    },
+                    {
+                      "k": "site_admin",
+                      "v": false
+                    },
+                    {
+                      "k": "starred_url",
+                      "v": "https://api.github.com/users/raynasun0109/starred{/owner}{/repo}"
+                    },
+                    {
+                      "k": "subscriptions_url",
+                      "v": "https://api.github.com/users/raynasun0109/subscriptions"
+                    },
+                    {
+                      "k": "type",
+                      "v": "User"
+                    },
+                    {
+                      "k": "url",
+                      "v": "https://api.github.com/users/raynasun0109"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "k": "server_url",
+          "v": "https://github.com"
+        },
+        {
+          "k": "api_url",
+          "v": "https://api.github.com"
+        },
+        {
+          "k": "graphql_url",
+          "v": "https://api.github.com/graphql"
+        }
+      ]
+    },
+    "needs": {
+      "t": 2
+    },
+    "matrix": {
+      "t": 2,
+      "d": [
+        {
+          "k": "node-version",
+          "v": "12.x"
+        }
+      ]
+    },
+    "strategy": {
+      "t": 2,
+      "d": [
+        {
+          "k": "fail-fast",
+          "v": true
+        },
+        {
+          "k": "job-index",
+          "v": 1.0
+        },
+        {
+          "k": "job-total",
+          "v": 4.0
+        },
+        {
+          "k": "max-parallel",
+          "v": 4.0
+        }
+      ]
+    }
+  }
+}
+[2021-04-07 07:30:23Z INFO JobRunner] Job ID a9a345e6-1106-5aaa-6fe5-f842db892828
+[2021-04-07 07:30:23Z INFO JobRunner] Creating job server with URL: https://pipelines.actions.githubusercontent.com/L17mpQ2DV2SSkOYzfyhFBBfYZoLdZlgaHEozvSinR7YrFpRnra/
+[2021-04-07 07:30:23Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2021-04-07 07:30:23Z INFO Worker] Listening for cancel message from the channel.
+[2021-04-07 07:30:23Z INFO Worker] Waiting for the job to complete or for a cancel message from the channel.
+[2021-04-07 07:30:24Z INFO Worker] Cancellation/Shutdown message received.
+[2021-04-07 07:30:24Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2021-04-07 07:30:24Z INFO JobServerQueue] Start process web console line queue.
+[2021-04-07 07:30:24Z INFO JobServerQueue] Start process file upload queue.
+[2021-04-07 07:30:24Z INFO JobServerQueue] Start process timeline update queue.
+[2021-04-07 07:30:24Z INFO ExecutionContext] Initialize GitHub context
+[2021-04-07 07:30:24Z INFO ExecutionContext] Initialize Env context
+[2021-04-07 07:30:24Z INFO ConfigurationStore] currentAssemblyLocation: /Users/sunmingyang/Documents/test/deployDemo/prod/actions-runner/bin/Runner.Worker.dll
+[2021-04-07 07:30:24Z INFO HostContext] Well known directory 'Bin': '/Users/sunmingyang/Documents/test/deployDemo/prod/actions-runner/bin'
+[2021-04-07 07:30:24Z INFO ConfigurationStore] binPath: /Users/sunmingyang/Documents/test/deployDemo/prod/actions-runner/bin
+[2021-04-07 07:30:24Z INFO HostContext] Well known directory 'Bin': '/Users/sunmingyang/Documents/test/deployDemo/prod/actions-runner/bin'
+[2021-04-07 07:30:24Z INFO HostContext] Well known directory 'Root': '/Users/sunmingyang/Documents/test/deployDemo/prod/actions-runner'
+[2021-04-07 07:30:24Z INFO ConfigurationStore] RootFolder: /Users/sunmingyang/Documents/test/deployDemo/prod/actions-runner
+[2021-04-07 07:30:24Z INFO HostContext] Well known directory 'Bin': '/Users/sunmingyang/Documents/test/deployDemo/prod/actions-runner/bin'
+[2021-04-07 07:30:24Z INFO HostContext] Well known directory 'Root': '/Users/sunmingyang/Documents/test/deployDemo/prod/actions-runner'
+[2021-04-07 07:30:24Z INFO HostContext] Well known config file 'Runner': '/Users/sunmingyang/Documents/test/deployDemo/prod/actions-runner/.runner'
+[2021-04-07 07:30:24Z INFO ConfigurationStore] ConfigFilePath: /Users/sunmingyang/Documents/test/deployDemo/prod/actions-runner/.runner
+[2021-04-07 07:30:24Z INFO HostContext] Well known directory 'Bin': '/Users/sunmingyang/Documents/test/deployDemo/prod/actions-runner/bin'
+[2021-04-07 07:30:24Z INFO HostContext] Well known directory 'Root': '/Users/sunmingyang/Documents/test/deployDemo/prod/actions-runner'
+[2021-04-07 07:30:24Z INFO HostContext] Well known config file 'Credentials': '/Users/sunmingyang/Documents/test/deployDemo/prod/actions-runner/.credentials'
+[2021-04-07 07:30:24Z INFO ConfigurationStore] CredFilePath: /Users/sunmingyang/Documents/test/deployDemo/prod/actions-runner/.credentials
+[2021-04-07 07:30:24Z INFO HostContext] Well known directory 'Bin': '/Users/sunmingyang/Documents/test/deployDemo/prod/actions-runner/bin'
+[2021-04-07 07:30:24Z INFO HostContext] Well known directory 'Root': '/Users/sunmingyang/Documents/test/deployDemo/prod/actions-runner'
+[2021-04-07 07:30:24Z INFO HostContext] Well known config file 'MigratedCredentials': '/Users/sunmingyang/Documents/test/deployDemo/prod/actions-runner/.credentials_migrated'
+[2021-04-07 07:30:24Z INFO ConfigurationStore] MigratedCredFilePath: /Users/sunmingyang/Documents/test/deployDemo/prod/actions-runner/.credentials_migrated
+[2021-04-07 07:30:24Z INFO HostContext] Well known directory 'Bin': '/Users/sunmingyang/Documents/test/deployDemo/prod/actions-runner/bin'
+[2021-04-07 07:30:24Z INFO HostContext] Well known directory 'Root': '/Users/sunmingyang/Documents/test/deployDemo/prod/actions-runner'
+[2021-04-07 07:30:24Z INFO HostContext] Well known config file 'Service': '/Users/sunmingyang/Documents/test/deployDemo/prod/actions-runner/.service'
+[2021-04-07 07:30:24Z INFO ConfigurationStore] ServiceConfigFilePath: /Users/sunmingyang/Documents/test/deployDemo/prod/actions-runner/.service
+[2021-04-07 07:30:24Z INFO ConfigurationStore] Read setting file: 295 chars
+[2021-04-07 07:30:24Z INFO HostContext] Well known directory 'Bin': '/Users/sunmingyang/Documents/test/deployDemo/prod/actions-runner/bin'
+[2021-04-07 07:30:24Z INFO HostContext] Well known directory 'Root': '/Users/sunmingyang/Documents/test/deployDemo/prod/actions-runner'
+[2021-04-07 07:30:24Z INFO HostContext] Well known directory 'Diag': '/Users/sunmingyang/Documents/test/deployDemo/prod/actions-runner/_diag'
+[2021-04-07 07:30:24Z INFO JobRunner] Starting the job execution context.
+[2021-04-07 07:30:24Z INFO HostContext] Well known directory 'Bin': '/Users/sunmingyang/Documents/test/deployDemo/prod/actions-runner/bin'
+[2021-04-07 07:30:24Z INFO HostContext] Well known directory 'Root': '/Users/sunmingyang/Documents/test/deployDemo/prod/actions-runner'
+[2021-04-07 07:30:24Z INFO HostContext] Well known directory 'Work': '/Users/sunmingyang/Documents/test/deployDemo/prod/actions-runner/react-app'
+[2021-04-07 07:30:24Z INFO JobRunner] Validating directory permissions for: '/Users/sunmingyang/Documents/test/deployDemo/prod/actions-runner/react-app'
+[2021-04-07 07:30:24Z INFO HostContext] Well known directory 'Bin': '/Users/sunmingyang/Documents/test/deployDemo/prod/actions-runner/bin'
+[2021-04-07 07:30:24Z INFO HostContext] Well known directory 'Root': '/Users/sunmingyang/Documents/test/deployDemo/prod/actions-runner'
+[2021-04-07 07:30:24Z INFO HostContext] Well known directory 'Work': '/Users/sunmingyang/Documents/test/deployDemo/prod/actions-runner/react-app'
+[2021-04-07 07:30:24Z INFO HostContext] Well known directory 'Tools': '/Users/sunmingyang/Documents/test/deployDemo/prod/actions-runner/react-app/_tool'
+[2021-04-07 07:30:24Z INFO HostContext] Well known directory 'Bin': '/Users/sunmingyang/Documents/test/deployDemo/prod/actions-runner/bin'
+[2021-04-07 07:30:24Z INFO HostContext] Well known directory 'Root': '/Users/sunmingyang/Documents/test/deployDemo/prod/actions-runner'
+[2021-04-07 07:30:24Z INFO HostContext] Well known directory 'Work': '/Users/sunmingyang/Documents/test/deployDemo/prod/actions-runner/react-app'
+[2021-04-07 07:30:24Z INFO HostContext] Well known directory 'Temp': '/Users/sunmingyang/Documents/test/deployDemo/prod/actions-runner/react-app/_temp'
+[2021-04-07 07:30:24Z ERR  TempDirectoryManager] System.OperationCanceledException: The operation was canceled.
+   at System.Linq.Parallel.QueryOperator`1.GetOpenedEnumerator(Nullable`1 mergeOptions, Boolean suppressOrder, Boolean forEffect, QuerySettings querySettings)
+   at System.Linq.Parallel.ForAllOperator`1.RunSynchronously()
+   at System.Linq.ParallelEnumerable.ForAll[TSource](ParallelQuery`1 source, Action`1 action)
+   at GitHub.Runner.Sdk.IOUtil.DeleteDirectory(String path, Boolean contentsOnly, Boolean continueOnContentDeleteError, CancellationToken cancellationToken)
+   at GitHub.Runner.Worker.TempDirectoryManager.InitializeTempDirectory(IExecutionContext jobContext)
+[2021-04-07 07:30:24Z INFO JobRunner] Getting job extension.
+[2021-04-07 07:30:24Z INFO JobRunner] Initialize job. Getting all job steps.
+[2021-04-07 07:30:24Z INFO HostContext] Well known directory 'Bin': '/Users/sunmingyang/Documents/test/deployDemo/prod/actions-runner/bin'
+[2021-04-07 07:30:24Z INFO HostContext] Well known directory 'Root': '/Users/sunmingyang/Documents/test/deployDemo/prod/actions-runner'
+[2021-04-07 07:30:24Z INFO HostContext] Well known directory 'Diag': '/Users/sunmingyang/Documents/test/deployDemo/prod/actions-runner/_diag'
+[2021-04-07 07:30:24Z INFO HostContext] Well known directory 'Bin': '/Users/sunmingyang/Documents/test/deployDemo/prod/actions-runner/bin'
+[2021-04-07 07:30:24Z INFO HostContext] Well known directory 'Root': '/Users/sunmingyang/Documents/test/deployDemo/prod/actions-runner'
+[2021-04-07 07:30:24Z INFO HostContext] Well known config file 'Credentials': '/Users/sunmingyang/Documents/test/deployDemo/prod/actions-runner/.credentials'
+[2021-04-07 07:30:24Z INFO HostContext] Well known directory 'Bin': '/Users/sunmingyang/Documents/test/deployDemo/prod/actions-runner/bin'
+[2021-04-07 07:30:24Z INFO HostContext] Well known directory 'Root': '/Users/sunmingyang/Documents/test/deployDemo/prod/actions-runner'
+[2021-04-07 07:30:24Z INFO HostContext] Well known config file 'SetupInfo': '/Users/sunmingyang/Documents/test/deployDemo/prod/actions-runner/.setup_info'
+[2021-04-07 07:30:24Z INFO HostContext] Well known directory 'Bin': '/Users/sunmingyang/Documents/test/deployDemo/prod/actions-runner/bin'
+[2021-04-07 07:30:24Z INFO HostContext] Well known directory 'Root': '/Users/sunmingyang/Documents/test/deployDemo/prod/actions-runner'
+[2021-04-07 07:30:24Z INFO HostContext] Well known directory 'Work': '/Users/sunmingyang/Documents/test/deployDemo/prod/actions-runner/react-app'
+[2021-04-07 07:30:24Z INFO PipelineDirectoryManager] Loading tracking config if exists: /Users/sunmingyang/Documents/test/deployDemo/prod/actions-runner/react-app/_PipelineMapping/raynasun0109/production/PipelineFolder.json
+[2021-04-07 07:30:24Z INFO PipelineDirectoryManager] Updating job run properties.
+[2021-04-07 07:30:24Z INFO HostContext] Well known directory 'Bin': '/Users/sunmingyang/Documents/test/deployDemo/prod/actions-runner/bin'
+[2021-04-07 07:30:24Z INFO HostContext] Well known directory 'Root': '/Users/sunmingyang/Documents/test/deployDemo/prod/actions-runner'
+[2021-04-07 07:30:24Z INFO HostContext] Well known directory 'Work': '/Users/sunmingyang/Documents/test/deployDemo/prod/actions-runner/react-app'
+[2021-04-07 07:30:24Z INFO HostContext] Well known directory 'Bin': '/Users/sunmingyang/Documents/test/deployDemo/prod/actions-runner/bin'
+[2021-04-07 07:30:24Z INFO HostContext] Well known directory 'Root': '/Users/sunmingyang/Documents/test/deployDemo/prod/actions-runner'
+[2021-04-07 07:30:24Z INFO HostContext] Well known directory 'Work': '/Users/sunmingyang/Documents/test/deployDemo/prod/actions-runner/react-app'
+[2021-04-07 07:30:24Z INFO HostContext] Well known directory 'Bin': '/Users/sunmingyang/Documents/test/deployDemo/prod/actions-runner/bin'
+[2021-04-07 07:30:24Z INFO HostContext] Well known directory 'Root': '/Users/sunmingyang/Documents/test/deployDemo/prod/actions-runner'
+[2021-04-07 07:30:24Z INFO HostContext] Well known directory 'Work': '/Users/sunmingyang/Documents/test/deployDemo/prod/actions-runner/react-app'
+[2021-04-07 07:30:24Z INFO JobExtension] Downloading actions
+[2021-04-07 07:30:24Z INFO HostContext] Well known directory 'Bin': '/Users/sunmingyang/Documents/test/deployDemo/prod/actions-runner/bin'
+[2021-04-07 07:30:24Z INFO HostContext] Well known directory 'Root': '/Users/sunmingyang/Documents/test/deployDemo/prod/actions-runner'
+[2021-04-07 07:30:24Z INFO HostContext] Well known directory 'Work': '/Users/sunmingyang/Documents/test/deployDemo/prod/actions-runner/react-app'
+[2021-04-07 07:30:24Z INFO HostContext] Well known directory 'Actions': '/Users/sunmingyang/Documents/test/deployDemo/prod/actions-runner/react-app/_actions'
+[2021-04-07 07:30:24Z ERR  JobExtension] Caught cancellation exception from JobExtension Initialization: System.OperationCanceledException: The operation was canceled.
+   at System.Linq.Parallel.QueryOperator`1.GetOpenedEnumerator(Nullable`1 mergeOptions, Boolean suppressOrder, Boolean forEffect, QuerySettings querySettings)
+   at System.Linq.Parallel.ForAllOperator`1.RunSynchronously()
+   at System.Linq.ParallelEnumerable.ForAll[TSource](ParallelQuery`1 source, Action`1 action)
+   at GitHub.Runner.Sdk.IOUtil.DeleteDirectory(String path, Boolean contentsOnly, Boolean continueOnContentDeleteError, CancellationToken cancellationToken)
+   at GitHub.Runner.Sdk.IOUtil.DeleteDirectory(String path, CancellationToken cancellationToken)
+   at GitHub.Runner.Worker.ActionManager.PrepareActionsAsync(IExecutionContext executionContext, IEnumerable`1 steps)
+   at GitHub.Runner.Worker.JobExtension.InitializeJob(IExecutionContext jobContext, AgentJobRequestMessage message)
+[2021-04-07 07:30:24Z ERR  JobRunner] Job is canceled during initialize.
+[2021-04-07 07:30:24Z ERR  JobRunner] Caught exception: System.OperationCanceledException: The operation was canceled.
+   at System.Linq.Parallel.QueryOperator`1.GetOpenedEnumerator(Nullable`1 mergeOptions, Boolean suppressOrder, Boolean forEffect, QuerySettings querySettings)
+   at System.Linq.Parallel.ForAllOperator`1.RunSynchronously()
+   at System.Linq.ParallelEnumerable.ForAll[TSource](ParallelQuery`1 source, Action`1 action)
+   at GitHub.Runner.Sdk.IOUtil.DeleteDirectory(String path, Boolean contentsOnly, Boolean continueOnContentDeleteError, CancellationToken cancellationToken)
+   at GitHub.Runner.Sdk.IOUtil.DeleteDirectory(String path, CancellationToken cancellationToken)
+   at GitHub.Runner.Worker.ActionManager.PrepareActionsAsync(IExecutionContext executionContext, IEnumerable`1 steps)
+   at GitHub.Runner.Worker.JobExtension.InitializeJob(IExecutionContext jobContext, AgentJobRequestMessage message)
+   at GitHub.Runner.Worker.JobRunner.RunAsync(AgentJobRequestMessage message, CancellationToken jobRequestCancellationToken)
+[2021-04-07 07:30:24Z INFO JobRunner] Shutting down the job server queue.
+[2021-04-07 07:30:24Z INFO JobServerQueue] Fire signal to shutdown all queues.
+[2021-04-07 07:30:25Z INFO JobServerQueue] All queue process task stopped.
+[2021-04-07 07:30:25Z INFO JobServerQueue] Try to append 1 batches web console lines for record '7dab7159-1f6d-4d81-b499-ae494f25a899', success rate: 1/1.
+[2021-04-07 07:30:25Z INFO JobServerQueue] Web console line queue drained.
+[2021-04-07 07:30:25Z INFO JobServerQueue] Uploading 2 files in one shot.
+[2021-04-07 07:30:27Z INFO JobServerQueue] Try to upload 2 log files or attachments, success rate: 2/2.
+[2021-04-07 07:30:27Z INFO JobServerQueue] File upload queue drained.
+[2021-04-07 07:30:27Z INFO JobServerQueue] Timeline update queue drained.
+[2021-04-07 07:30:27Z INFO JobServerQueue] All queue process tasks have been stopped, and all queues are drained.
+[2021-04-07 07:30:27Z INFO TempDirectoryManager] Cleaning runner temp folder: /Users/sunmingyang/Documents/test/deployDemo/prod/actions-runner/react-app/_temp
+[2021-04-07 07:30:27Z INFO JobRunner] Raising job completed event.
